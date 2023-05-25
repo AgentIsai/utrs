@@ -32,8 +32,8 @@ class RemoveStarPermissions extends Migration
             if ($permission->tooladmin) {
                 $newPerm->tooladmin = true;
             }
-            if ($permission->developer) {
-                $newPerm->developer = true;
+            if ($permission->sysadmin) {
+                $newPerm->sysadmin = true;
             }
 
             $newPerm->save();

@@ -59,7 +59,7 @@
                         <th>Oversight</th>
                         <th>Steward</th>
                         <th>Trust and Safety</th>
-                        <th>UTRS Developer</th>
+                        <th>System administrator</th>
                         <th>Tool admin</th>
                         <th>Sysop</th>
                         <th>User</th>
