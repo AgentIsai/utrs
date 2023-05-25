@@ -17,11 +17,11 @@ return [
 
     'globalwiki' => [
         'name' => 'Global locks/blocks',
-        'api_url' => env('WIKI_URL_GLOBAL', 'https://meta.wikimedia.org/w/api.php'),
-        'url_base' => 'https://meta.wikimedia.org/',
-        'responding_user_title' => 'Wikimedia Steward',
-        'hidden_from_appeal_wiki_list' => true,
-        'SRGP' => 'Steward requests/Global permissions',
+        'api_url' => env('WIKI_URL_GLOBAL', 'https://meta.miraheze.org/w/api.php'),
+        'url_base' => 'https://meta.miraheze.org/',
+        'responding_user_title' => 'Miraheze Steward',
+        'hidden_from_appeal_wiki_list' => false,
+        'SRGP' => 'Stewards\' noticeboard',
         'appeal_list_page' => 'User:AmandaNP/UTRS Appeals',
 
         'permission_overrides' => [
@@ -34,19 +34,19 @@ return [
     'wikis' => [
         // IF YOU ARE REMOVING WIKIS: ensure FakeMediaWikiRepository has two existing test wikis!
 
-        'enwiki' => [
-            'name' => 'English Wikipedia',
-            'api_url' => env('WIKI_URL_ENWIKI', 'https://en.wikipedia.org/w/api.php'),
-            'url_base' => 'https://en.wikipedia.org/',
-            'responding_user_title' => 'English Wikipedia Administrator',
+        'metawiki' => [
+            'name' => 'Miraheze Meta',
+            'api_url' => env('WIKI_URL_METAWIKI', 'https://meta.miraheze.org/w/api.php'),
+            'url_base' => 'https://meta.miraheze.org/',
+            'responding_user_title' => 'Miraheze Meta Administrator',
             'appeal_list_page' => 'User:AmandaNP/UTRS Appeals',
         ],
-        'ptwiki' => [
-            'name' => 'Portuguese Wikipedia',
-            'api_url' => env('WIKI_URL_PTWIKI', 'https://pt.wikipedia.org/w/api.php'),
-            'url_base' => 'https://pt.wikipedia.org/',
-            'responding_user_title' => 'Portuguese Wikipedia Administrator',
-            'hidden_from_appeal_wiki_list' => true,
+        'avidwiki' => [
+            'name' => 'AVID Wiki',
+            'api_url' => env('WIKI_URL_AVIDWIKI', 'https://avid.miraheze.org/w/api.php'),
+            'url_base' => 'https://avid.miraheze.org/',
+            'responding_user_title' => 'AVID Administrator',
+            'hidden_from_appeal_wiki_list' => false,
         ],
     ],
 ];
