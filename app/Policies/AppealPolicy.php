@@ -43,7 +43,7 @@ class AppealPolicy
         //Oversight allows viewing any appeals
         if ($user->hasAnySpecifiedLocalOrGlobalPerms($appeal->wiki, 'oversight') 
             || $user->hasAnySpecifiedLocalOrGlobalPerms($appeal->wiki, 'steward') 
-            || $user->hasAnySpecifiedLocalOrGlobalPerms($appeal->wiki, 'staff')) {
+            || $user->hasAnySpecifiedLocalOrGlobalPerms($appeal->wiki, 'trustandsafety')) {
             return true;
         }
 

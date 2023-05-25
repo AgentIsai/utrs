@@ -10,9 +10,9 @@ return [
     ],
 
     'base_permissions' => [
-        'appeal_view' => ['admin', 'staff', 'steward'],
-        'appeal_handle' => ['admin', 'staff', 'steward'],
-        'appeal_checkuser' => ['checkuser', 'staff', 'steward'],
+        'appeal_view' => ['admin', 'trustandsafety', 'steward'],
+        'appeal_handle' => ['admin', 'trustandsafety', 'steward'],
+        'appeal_checkuser' => ['checkuser', 'trustandsafety', 'steward'],
     ],
 
     'globalwiki' => [
@@ -25,9 +25,9 @@ return [
         'appeal_list_page' => 'User:AmandaNP/UTRS Appeals',
 
         'permission_overrides' => [
-            'appeal_view' => ['steward', 'staff'],
-            'appeal_handle' => ['steward', 'staff'],
-            'appeal_checkuser' => ['steward', 'staff'],
+            'appeal_view' => ['steward', 'trustandsafety', 'global-sysop'],
+            'appeal_handle' => ['steward', 'trustandsafety', 'global-sysop'],
+            'appeal_checkuser' => ['steward', 'trustandsafety'],
         ],
     ],
 

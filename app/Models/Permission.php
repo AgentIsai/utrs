@@ -11,7 +11,7 @@ class Permission extends Model
     protected $guarded = ['id'];
     public $timestamps = false;
 
-    const ALL_POSSIBILITIES = ['checkuser', 'oversight', 'steward', 'staff', 'developer', 'tooladmin', 'admin', 'user'];
+    const ALL_POSSIBILITIES = ['checkuser', 'oversight', 'steward', 'global-sysop', 'trustandsafety', 'sysadmin', 'admin', 'user'];
 
     public function getPresentPermissionsAttribute()
     {
@@ -38,7 +38,7 @@ class Permission extends Model
         // 'staff' or 'steward' permission to do actions that check for 'admin' permission
 
         $alternatives = [
-            'admin' => ['steward', 'staff'],
+            'admin' => ['steward', 'trustandsafety'],
         ];
 
         $perms = collect($perms)

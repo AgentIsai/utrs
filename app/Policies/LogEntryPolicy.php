@@ -29,8 +29,8 @@ class LogEntryPolicy
 
         $wiki = $log->tryFigureAssociatedWiki();
         $validPermissions = $log->protected == LogEntry::LOG_PROTECTION_FUNCTIONARY
-            ? ['checkuser', 'oversight', 'steward', 'staff', 'developer']
-            : ['admin', 'steward', 'staff', 'developer'];
+            ? ['checkuser', 'oversight', 'steward', 'trustandsafety', 'sysadmin']
+            : ['admin', 'steward', 'trustandsafety', 'sysadmin'];
 
         // if we can figure out the wiki, that's great, otherwise just check if the permission is present anywhere
         return $wiki

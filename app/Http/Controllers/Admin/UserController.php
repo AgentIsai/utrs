@@ -36,7 +36,7 @@ class UserController extends Controller
                     $perm->oversight ||
                     $perm->checkuser ||
                     $perm->steward ||
-                    $perm->staff ||
+                    $perm->trustandsafety ||
                     $perm->developer ||
                     $perm->tooladmin ||
                     $perm->admin

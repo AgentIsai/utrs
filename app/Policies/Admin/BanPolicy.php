@@ -130,7 +130,7 @@ class BanPolicy
     {
         // check if it can be done anywhere if requested
         if (!$target || $target === self::WIKI_ANY) {
-            return $user->hasAnySpecifiedPermsOnAnyWiki(['oversight', 'steward', 'staff', 'developer']);
+            return $user->hasAnySpecifiedPermsOnAnyWiki(['oversight', 'steward', 'trustandsafety', 'sysadmin']);
         }
 
         // check for the specified wiki(s)
@@ -151,11 +151,11 @@ class BanPolicy
                 })
                 ->toArray();
 
-            return $user->hasAnySpecifiedLocalOrGlobalPerms($target, ['oversight', 'steward', 'staff', 'developer']);
+            return $user->hasAnySpecifiedLocalOrGlobalPerms($target, ['oversight', 'steward', 'trustandsafety', 'sysadmin']);
         }
 
         // check for the specified ban
         $wikiDbName = $target->wiki ? $target->wiki->database_name : null;
-        return $user->hasAnySpecifiedLocalOrGlobalPerms($wikiDbName, ['oversight', 'steward', 'staff', 'developer']);
+        return $user->hasAnySpecifiedLocalOrGlobalPerms($wikiDbName, ['oversight', 'steward', 'trustandsafety', 'sysadmin']);
     }
 }

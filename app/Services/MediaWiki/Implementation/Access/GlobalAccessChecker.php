@@ -29,7 +29,7 @@ class GlobalAccessChecker extends BaseAccessChecker
     {
         return [
             'steward',
-            'staff',
+            'trustandsafety',
         ];
     }
 

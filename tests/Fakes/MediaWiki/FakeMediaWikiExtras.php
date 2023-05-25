@@ -48,8 +48,8 @@ class FakeMediaWikiExtras implements MediaWikiExtras
             $globalrights[] = 'steward';
         }
 
-        if (in_array('staff', $user['rights'])) {
-            $globalrights[] = 'staff';
+        if (in_array('trustandsafety', $user['rights'])) {
+            $globalrights[] = 'trustandsafety';
         }
         return $globalrights;
     }

@@ -223,7 +223,7 @@ class AppealActionController extends Controller
                         [ Appeal::STATUS_ACCEPT, Appeal::STATUS_EXPIRE, Appeal::STATUS_DECLINE,
                           Appeal::STATUS_CHECKUSER, Appeal::STATUS_ADMIN, ])
                     && $user->hasAnySpecifiedLocalOrGlobalPerms($appeal->wiki,
-                        [ 'tooladmin', 'checkuser', 'oversight', 'steward', 'staff', ])) {
+                        [ 'sysadmin', 'checkuser', 'oversight', 'steward', 'trustandsafety', ])) {
                     return true;
                 }
 
