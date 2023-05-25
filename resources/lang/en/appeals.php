@@ -45,7 +45,7 @@ return [
         'assigned-me' => 'Assigned to me',
         'unassigned'=>'All unreserved open appeals',
         'reserved'=>'Open reserved appeals',
-        'developer'=>'Developer access appeals',
+        'sysadmin'=>'Sysadmin access appeals',
     ],
 
     'send-reply-header'  => 'Send a templated reply',

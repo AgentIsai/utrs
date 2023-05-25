@@ -18,7 +18,7 @@ class RemoveStarPermissions extends Migration
         $manualPermissions = Permission::query()
             ->where('wiki', '=', '*')
             ->where(function (Builder $query) {
-                $query->where('developer', '=', '1')
+                $query->where('sysadmin', '=', '1')
                     ->orWhere('tooladmin', '=', '1');
             });
 

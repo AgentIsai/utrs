@@ -45,7 +45,7 @@ class AppealAdvancedSearchController extends Controller
 
         $statusInputs = collect(Appeal::ALL_STATUSES)
             ->filter(function ($status) use ($user) {
-                if ($user->hasAnySpecifiedLocalOrGlobalPerms([], 'developer')) {
+                if ($user->hasAnySpecifiedLocalOrGlobalPerms([], 'sysadmin')) {
                     return true;
                 }
 

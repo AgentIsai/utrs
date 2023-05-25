@@ -227,7 +227,7 @@ class AppealActionController extends Controller
                     return true;
                 }
 
-                return $user->hasAnySpecifiedPermsOnAnyWiki([ 'developer' ])
+                return $user->hasAnySpecifiedPermsOnAnyWiki([ 'sysadmin' ])
                     ? true
                     : 'This appeal is currently not in a status where you can re-open it.';
             }

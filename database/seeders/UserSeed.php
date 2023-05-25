@@ -29,7 +29,7 @@ class UserSeed extends Seeder
         if ($grantDeveloper) {
             Permission::create([
                 'user_id' => $user->id,
-                'developer' => 1,
+                'sysadmin' => 1,
                 'wiki' => 'global',
             ]);
         }

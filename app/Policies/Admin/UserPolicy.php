@@ -70,8 +70,8 @@ class UserPolicy
     public function updatePermission(User $user, User $model, string $wiki, string $permission)
     {
         $permissionsNeeded = [
-            'developer' => ['developer'], // only developers can assign developer permissions
-            'tooladmin' => ['tooladmin', 'developer'], // tooladmins can make other people to tooladmins,
+            'sysadmin' => ['sysadmin'], // only developers can assign developer permissions
+            'tooladmin' => ['tooladmin', 'sysadmin'], // tooladmins can make other people to tooladmins,
         ];
 
         if (!Arr::exists($permissionsNeeded, $permission)) {

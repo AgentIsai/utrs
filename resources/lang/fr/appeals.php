@@ -126,7 +126,7 @@ return [
         'assigned-me' => 'Assigné à moi',
         'unassigned'  => 'Tous les appels ouverts non réservés',
         'reserved'    => 'Appels réservés ouverts',
-        'developer'   => 'Appels concernant l\'accès des développeurs',
+        'sysadmin'   => 'Appels concernant l\'accès des développeurs',
         'title'       => 'Type d\'appel'
     ],
     'status'                  => [

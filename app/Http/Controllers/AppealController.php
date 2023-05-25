@@ -48,7 +48,7 @@ class AppealController extends Controller
         // UTRS 2 appeal exists
         if ($info) {
             $this->authorize('view', $info);
-            $isDeveloper = $user->hasAnySpecifiedLocalOrGlobalPerms([], 'developer');
+            $isDeveloper = $user->hasAnySpecifiedLocalOrGlobalPerms([], 'sysadmin');
 
             /** @var User $user */
             $user = Auth::user();
@@ -63,7 +63,7 @@ class AppealController extends Controller
             $perms['functionary'] = $perms['checkuser'] || $perms['oversight'];
             $perms['admin'] = $user->hasAnySpecifiedLocalOrGlobalPerms($info->wiki, 'admin');
             $perms['tooladmin'] = $user->hasAnySpecifiedLocalOrGlobalPerms($info->wiki, 'tooladmin');
-            $perms['developer'] = $isDeveloper;
+            $perms['sysadmin'] = $isDeveloper;
             
             $perms['steward'] = $user->hasAnySpecifiedLocalOrGlobalPerms($info->wiki, 'steward');
 
@@ -139,7 +139,7 @@ class AppealController extends Controller
         /** @var User $user */
         $user = Auth::user();
 
-        $isDeveloper = $user->hasAnySpecifiedPermsOnAnyWiki('developer');
+        $isDeveloper = $user->hasAnySpecifiedPermsOnAnyWiki('sysadmin');
         $isTooladmin = $isDeveloper || $user->hasAnySpecifiedPermsOnAnyWiki('tooladmin');
         $isCUAnyWiki = $isDeveloper || $user->hasAnySpecifiedPermsOnAnyWiki('checkuser');
 
@@ -160,7 +160,7 @@ class AppealController extends Controller
             'unassigned'=>__('appeals.appeal-types.unassigned'),
             'reserved'=>__('appeals.appeal-types.reserved'),
         ];
-        if($isDeveloper) { $appealtypes['developer']=__('appeals.appeal-types.developer'); }
+        if($isDeveloper) { $appealtypes['sysadmin']=__('appeals.appeal-types.developer'); }
 
         $developerStatuses = [Appeal::STATUS_VERIFY, Appeal::STATUS_NOTFOUND];
         $basicStatuses = [Appeal::STATUS_ACCEPT, Appeal::STATUS_DECLINE, Appeal::STATUS_EXPIRE, Appeal::STATUS_VERIFY, Appeal::STATUS_NOTFOUND, Appeal::STATUS_INVALID, Appeal::STATUS_CHECKUSER];
@@ -191,7 +191,7 @@ class AppealController extends Controller
                 }
             })->get();
         if($isDeveloper) {
-            $appeals[$appealtypes['developer']] = Appeal::whereIn('status',$developerStatuses)
+            $appeals[$appealtypes['sysadmin']] = Appeal::whereIn('status',$developerStatuses)
             ->get();
         }
 

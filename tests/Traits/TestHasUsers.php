@@ -68,7 +68,7 @@ trait TestHasUsers
     protected function getDeveloperUser($extraData = []): User
     {
         $permissions = $this->userDefaultPermissions;
-        $permissions['global'] = ['developer'];
+        $permissions['global'] = ['sysadmin'];
         return $this->getUser($permissions, $extraData);
     }
 }

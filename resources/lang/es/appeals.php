@@ -39,7 +39,7 @@ return [
         'assigned-me' => 'Apelaciones asignadas',
         'unassigned'  => 'Todas las apelaciones no reservadas abiertas ',
         'reserved'    => 'Apelaciones reservadas abiertas',
-        'developer'   => 'Apelaciones de acceso de desarrolladores'
+        'sysadmin'   => 'Apelaciones de acceso de desarrolladores'
     ],
     'send-reply-header'       => 'Enviar una respuesta con plantilla',
     'send-reply-button'       => 'Enviar una respuesta al usuario',

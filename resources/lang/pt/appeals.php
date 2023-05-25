@@ -126,7 +126,7 @@ return [
         'assigned-me' => 'Atribuído a mim',
         'unassigned'  => 'Todos os recursos abertos não reservados',
         'reserved'    => 'Abrir apelações reservadas',
-        'developer'   => 'Apelações de acesso do desenvolvedor',
+        'sysadmin'   => 'Apelações de acesso do desenvolvedor',
         'title'       => 'Tipo de Apelação'
     ],
     'status'                  => [

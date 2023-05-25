@@ -149,7 +149,7 @@ function displayTransfer() {
                                                                 {{__('appeals.links.reserve')}}
                                                             </button>
                                                         </form>
-                                                    @elseif($info->handlingadmin == Auth::id() || $perms['tooladmin'] || $perms['developer'])
+                                                    @elseif($info->handlingadmin == Auth::id() || $perms['tooladmin'] || $perms['sysadmin'])
                                                         <form action="{{ route('appeal.action.release', $info) }}" method="POST" style="display: inline;">
                                                             @csrf
                                                             <button class="btn btn-success">
@@ -162,7 +162,7 @@ function displayTransfer() {
                                                             {{__('appeals.links.reserve')}}
                                                         </button>
                                                     @endif {{-- disabled button --}}
-                                                    @if($perms['developer'] || $perms['oversight'] || $perms['steward'])
+                                                    @if($perms['sysadmin'] || $perms['oversight'] || $perms['steward'])
                                                         <form action="{{ route('appeal.action.invalidate', $info) }}" method="POST" style="display: inline;">
                                                             @csrf
                                                             <button class="btn btn-danger">
@@ -210,7 +210,7 @@ function displayTransfer() {
                                                         </form>
                                                     </div>
                                                 @endif
-                                                @if(($info->status !== Appeal::STATUS_OPEN && $info->status !== Appeal::STATUS_EXPIRE && $info->status !== Appeal::STATUS_AWAITING_REPLY && $info->status !== Appeal::STATUS_DECLINE && $info->status !== Appeal::STATUS_ACCEPT) && ($perms['tooladmin'] || $perms['functionary'] || $perms['developer']))
+                                                @if(($info->status !== Appeal::STATUS_OPEN && $info->status !== Appeal::STATUS_EXPIRE && $info->status !== Appeal::STATUS_AWAITING_REPLY && $info->status !== Appeal::STATUS_DECLINE && $info->status !== Appeal::STATUS_ACCEPT) && ($perms['tooladmin'] || $perms['functionary'] || $perms['sysadmin']))
                                                     <div class="mb-2">
                                                         <form action="{{ route('appeal.action.reopen', $info) }}" method="POST">
                                                             @csrf
@@ -220,7 +220,7 @@ function displayTransfer() {
                                                         </form>
                                                     </div>
                                                 @endif
-                                                @if($perms['developer'] && ($info->status=="NOTFOUND" || $info->status=="VERIFY"))
+                                                @if($perms['sysadmin'] && ($info->status=="NOTFOUND" || $info->status=="VERIFY"))
                                                     <div class="mb-2">
                                                         <form action="{{ route('appeal.action.findagain', $info) }}" method="POST">
                                                             @csrf

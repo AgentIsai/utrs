@@ -53,7 +53,7 @@ class AuthServiceProvider extends ServiceProvider
                 'updatePermission', // UserPolicy
             ];
 
-            if ($user->hasAnySpecifiedLocalOrGlobalPerms('global', 'developer')
+            if ($user->hasAnySpecifiedLocalOrGlobalPerms('global', 'sysadmin')
                 && !in_array($ability, $doNotOverrideDev)) {
 
                 // allow developers to do everything they'd ever want

@@ -19,8 +19,9 @@ class CreatePermissionsTable extends Migration
             $table->boolean('oversight')->default(0);
             $table->boolean('checkuser')->default(0);
             $table->boolean('steward')->default(0);
+            $table->boolean('global-sysop')->default(0);
             $table->boolean('trustandsafety')->default(0);
-            $table->boolean('developer')->default(0);
+            $table->boolean('sysadmin')->default(0);
             $table->boolean('tooladmin')->default(0);
             $table->boolean('privacy')->default(0);
             $table->boolean('admin')->default(0);
